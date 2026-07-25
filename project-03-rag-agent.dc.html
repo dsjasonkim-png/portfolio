@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:oklch(97% 0.006 90);font-family:'Noto Sans KR',sans-serif;}
+  a{color:oklch(38% 0.09 165);text-decoration:none;}
+  a:hover{color:oklch(30% 0.09 165);}
+</style>
+</helmet>
+
+<div style="max-width:820px;margin:0 auto;padding:0 32px 100px 32px;">
+
+  <div style="padding:28px 0;font-size:13.5px;"><a href="index.dc.html">&larr; 포트폴리오로 돌아가기</a></div>
+
+  <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:oklch(38% 0.09 165);text-transform:uppercase;">03 · 롯데하이마트 · 2024.03 ~ 현재</div>
+  <h1 style="font-size:30px;font-weight:900;color:oklch(18% 0.01 90);margin:10px 0 6px 0;line-height:1.25;">쇼핑 AI Agent / RAG 기반 상품 탐색·추천 PoC</h1>
+  <div style="font-size:13.5px;color:oklch(45% 0.01 90);margin-bottom:24px;">프로젝트 책임자 — 기획·설계, 기술검증 및 개발</div>
+
+  <ul style="font-size:15px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 12px 0;padding-left:20px;">
+    <li>기존 검색·필터 UI는 고객이 스스로 스펙 용어를 알고 조건을 입력해야만 원하는 상품을 찾을 수 있어, "이런 상황에 뭐가 좋을지" 묻는 자연스러운 쇼핑 대화를 지원하지 못함</li>
+    <li>고객이 자연어로 질의하면 제품군·예산·사용 맥락·필수 조건을 해석하고, 상품 지식을 검색·재정렬해 추천 근거와 함께 응답을 생성하는 대화형 추천 구조를 검증한 PoC</li>
+  </ul>
+
+  <h2 style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:oklch(45% 0.01 90);margin:32px 0 14px 0;">아키텍처</h2>
+  <img src="assets/arch-rag.svg" alt="쇼핑 AI Agent RAG 구조" style="width:100%;display:block;margin:0 0 20px 0;border:1px solid oklch(88% 0.005 90);border-radius:8px;background:#fff;padding:12px;">
+
+  <div style="background:#fff;border:1px solid oklch(88% 0.005 90);border-radius:8px;padding:16px 20px;margin:0 0 32px 0;">
+    <div style="font-size:12px;font-weight:700;color:oklch(45% 0.01 90);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">개발 환경</div>
+    <div style="font-size:13.5px;line-height:1.9;color:oklch(28% 0.01 90);">RTX4090 · 64GB RAM (개발용 PC) · Gemma3-4B(fp16) · vLLM · FastAPI · LangGraph(오케스트레이션) · LangChain(RAG 파이프라인) · FAISS · GraphRAG(Neo4j) · Gradio(챗봇 UI) · 임베딩 dragonkue/BGE-m3-ko</div>
+  </div>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:28px;">
+    <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">1. AI Agent 구조 검토 및 프로토타입 설계</h3>
+    <ul style="font-size:14.5px;line-height:1.75;color:oklch(28% 0.01 90);margin:0 0 10px 0;padding-left:18px;">
+      <li>LangChain·LangGraph 기반으로 고객 질의에서 제품군, 예산, 사용 맥락, 핵심 조건을 추출하는 질의 해석 구조 설계</li>
+      <li>추천 Agent, 지식 Agent, CS Agent 등 멀티 Agent 기반 쇼핑 지원 구조 검토 및 상품 데이터 파이프라인 설계</li>
+    </ul>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">LangChain</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">LangGraph</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Multi-Agent 설계</span></div>
+  </div>
+
+  <div style="border-left:3px solid oklch(45% 0.09 40);padding-left:20px;margin-bottom:28px;background:oklch(97% 0.012 40);border-radius:0 8px 8px 0;padding-top:14px;padding-bottom:14px;">
+    <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">2. Slot Filling 기반 추천 그래프</h3>
+    <ul style="font-size:14.5px;line-height:1.75;color:oklch(28% 0.01 90);margin:0 0 10px 0;padding-left:18px;">
+      <li>"냉장고 추천해줘" 같은 첫 질의에 무작정 추천하지 않고, 가족 규모(용량)·원하는 형태(양문형·4도어·빌트인)·예산 범위·특수 기능 필요 여부를 상담으로 수집(Slot Filling)</li>
+      <li>이후 그래프는 <strong>첫 추천 → 추가 질문(스펙·비교) → 같은 품목 내 다른 상품 추천 → 다른 품목 추천</strong>의 4가지 분기로 대화 진행</li>
+    </ul>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(95% 0.025 40);color:oklch(38% 0.09 40);font-weight:500;">LangGraph State Machine</span></div>
+  </div>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:28px;">
+    <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">3. 품목→상품 2단계 계층 검색</h3>
+    <ul style="font-size:14.5px;line-height:1.75;color:oklch(28% 0.01 90);margin:0 0 10px 0;padding-left:18px;">
+      <li>품목별로 별도의 벡터 DB를 구성해 유사 품목 간 검색 혼선(예: 냉장고 vs 김치냉장고) 감소</li>
+      <li>질문 대상 품목을 먼저 Retrieve한 뒤 그 안에서 상품을 다시 Retrieve하는 2단계 구조로 정확도 향상</li>
+      <li>상품 스펙과 OCR-LLM 기반 FABEC 판매논리를 함께 임베딩(dragonkue/BGE-m3-ko)해 Semantic Search·Reranking에 활용</li>
+    </ul>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">RAG</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Vector DB / FAISS</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Semantic Search</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Reranking</span></div>
+  </div>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:28px;">
+    <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">4. 개인화 컨텍스트 연계</h3>
+    <ul style="font-size:14.5px;line-height:1.75;color:oklch(28% 0.01 90);margin:0 0 10px 0;padding-left:18px;">
+      <li>CDP에 통합된 고객 세그먼트·재구매주기 데이터를 추천 Agent의 개인화 컨텍스트로 연계</li>
+      <li>고객별 관심 상품군과 재구매 예상 시점을 AI 추천 후보군 생성에 반영</li>
+    </ul>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">CDP 연계</span><span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Personalization</span></div>
+  </div>
+
+  <div style="background:oklch(94% 0.03 165);border-radius:8px;padding:18px 20px;margin:32px 0;">
+    <div style="font-size:13.5px;font-weight:700;color:oklch(28% 0.09 165);margin-bottom:4px;">성과</div>
+    <div style="font-size:14.5px;line-height:1.7;color:oklch(28% 0.05 165);">상품 데이터와 고객 프로파일을 결합한 대화형 상품 탐색·추천 구조의 적용 가능성을 검증했습니다.</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding-top:32px;margin-top:20px;border-top:1px solid oklch(88% 0.005 90);font-size:13.5px;">
+    <a href="project-02-pipeline.dc.html">&larr; 이전: 상품정보 자동화 파이프라인</a>
+    <a href="project-04-fashion-forecasting.dc.html">다음: 패션 리테일 수요예측 &rarr;</a>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

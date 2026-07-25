@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:oklch(97% 0.006 90);font-family:'Noto Sans KR',sans-serif;}
+  a{color:oklch(38% 0.09 165);text-decoration:none;}
+  a:hover{color:oklch(30% 0.09 165);}
+  table{border-collapse:collapse;width:100%;}
+  th,td{padding:7px 10px;font-size:13px;text-align:left;border-bottom:1px solid oklch(90% 0.005 90);}
+  th{font-weight:700;border-bottom:1px solid oklch(20% 0.01 90);color:oklch(28% 0.01 90);}
+  td{color:oklch(30% 0.01 90);}
+</style>
+</helmet>
+
+<div style="max-width:840px;margin:0 auto;padding:0 32px 100px 32px;">
+
+  <div style="padding:28px 0;font-size:13.5px;"><a href="index.dc.html">&larr; 포트폴리오로 돌아가기</a></div>
+
+  <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:oklch(38% 0.09 165);text-transform:uppercase;">05 · 국민대학교 비즈니스IT전문대학원 · 2023.09 ~ 2026.08(졸업예정)</div>
+  <h1 style="font-size:28px;font-weight:900;color:oklch(18% 0.01 90);margin:10px 0 6px 0;line-height:1.3;">멀티모달 상품 정보를 활용한 설득형 지식 기반 상품 추천 AI 에이전트 프레임워크 연구</h1>
+  <div style="font-size:13px;color:oklch(45% 0.01 90);margin-bottom:6px;">A Framework for a Persuasive Knowledge-based AI Agent for Product Recommendation Using Multimodal Product Information</div>
+  <div style="font-size:13px;color:oklch(50% 0.01 90);margin-bottom:20px;">박사학위 본심 발표자료 기준 · <a href="assets/docs/phd-dissertation.pdf" target="_blank">졸업논문 PDF 보기</a></div>
+
+  <ul style="font-size:15px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 12px 0;padding-left:20px;">
+    <li>가전제품과 같은 고관여 상품은 온라인에서 단순 스펙만으로 구매 의사결정을 지원하기 어려움</li>
+    <li>상품 기능이 어떤 장점과 소비자 편익으로 연결되는지 설명하는 <strong>설득형 콘텐츠</strong> 필요</li>
+    <li>실제 유통 환경의 상품 정보는 제조사별 형식이 일관되지 않고 핵심 소구점이 이미지 안에 비정형 텍스트로 존재, 구조화에 큰 수작업 비용 발생</li>
+    <li>OCR 정확도 개선·상품 설명 생성 연구는 있었지만, <strong>이미지 추출부터 설득형 지식 생성·검색·추천까지 잇는 통합 접근은 부족</strong></li>
+  </ul>
+  <ul style="font-size:15px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 28px 0;padding-left:20px;">
+    <li>(1) 비정형 상품정보를 판매논리로 자동 생성</li>
+    <li>(2) 설득형 지식 단위로 구조화</li>
+    <li>(3) 구조화된 지식으로 시맨틱 검색·상품 추천 AI 에이전트 검증</li>
+  </ul>
+
+  <h2 style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:oklch(45% 0.01 90);margin:0 0 14px 0;">End-to-End 연구 구조</h2>
+  <img src="assets/arch-phd-e2e.svg" alt="End-to-End 연구 프레임워크" style="width:100%;display:block;margin:0 0 20px 0;border:1px solid oklch(88% 0.005 90);border-radius:8px;background:#fff;padding:12px;">
+
+  <table style="margin-bottom:36px;">
+    <thead><tr><th>구분</th><th>Study 1</th><th>Study 2</th></tr></thead>
+    <tbody>
+      <tr><td>연구명</td><td>OCR-LLM 기반 판매논리 자동 생성</td><td>설득형 지식 기반 상품 추천 AI 에이전트</td></tr>
+      <tr><td>핵심 입력</td><td>상품 상세페이지 이미지</td><td>상품 속성 및 설득형 지식베이스</td></tr>
+      <tr><td>핵심 처리</td><td>전처리·분할·OCR·문맥 정제·FAB 생성</td><td>질의 해석·시맨틱 검색·재정렬·응답 생성</td></tr>
+      <tr><td>지식 구조</td><td>Feature, Advantage, Benefit, SONCAS</td><td>FABEC, SONCAS, 기본 메타데이터</td></tr>
+      <tr><td>검증 방식</td><td>CER, 판매논리·구매동기 평가, 전문가 검토</td><td>Hit@5, MRR@10, NDCG@10</td></tr>
+      <tr><td>실험 데이터</td><td>가전 5개 품목</td><td>자체 노트북 데이터 + Amazon ESCI</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-size:20px;font-weight:900;color:oklch(18% 0.01 90);margin:44px 0 6px 0;padding-top:12px;border-top:2px solid oklch(20% 0.01 90);">Study 1 · OCR-LLM 기반 판매논리 자동 생성</h2>
+  <p style="font-size:14.5px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 20px 0;">2개 모듈·4개 서브모듈로 구성된 자동화 파이프라인.</p>
+
+  <img src="assets/arch-phd-study1.svg" alt="Study 1 OCR-LLM 판매논리 자동 생성 파이프라인" style="width:100%;display:block;margin:0 0 28px 0;border:1px solid oklch(88% 0.005 90);border-radius:8px;background:#fff;padding:12px;">
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:24px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">텍스트 추출 모듈</h3>
+    <ul style="font-size:14px;line-height:1.75;color:oklch(28% 0.01 90);margin:0;padding-left:18px;">
+      <li><strong>전처리</strong> — Histogram Equalization·CLAHE로 명암 대비를 높여 텍스트 가독성 개선. CLAHE 적용 OCR이 원본보다 낮은 평균 CER을 보임</li>
+      <li><strong>검출·분할</strong> — CRAFT로 텍스트 위치 검출 후, 글자가 잘리지 않는 좌표에서 이미지 분할, 분할 이미지별 OCR 실행 후 원래 순서로 병합. 핵심은 단순 일정 크기 분할이 아니라 <strong>텍스트 검출 위치 기준</strong>의 분할</li>
+      <li><strong>OCR</strong> — EasyOCR(검출 CRAFT, 인식 CRNN), CPU Only 환경에서 실험</li>
+    </ul>
+  </div>
+
+  <div style="border-left:3px solid oklch(45% 0.09 40);padding-left:20px;margin-bottom:24px;background:oklch(97% 0.012 40);border-radius:0 8px 8px 0;padding-top:14px;padding-bottom:14px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">LCORE — LLM 기반 문맥적 OCR 정제</h3>
+    <p style="font-size:14px;line-height:1.8;color:oklch(28% 0.01 90);margin:0;"><strong>LCORE(LLM-based Contextual OCR Refinement)</strong>는 OCR 결과를 상품의 품목·상품명·문맥 기준으로 정제하는 단계입니다.</p>
+    <ul style="font-size:14px;line-height:1.75;color:oklch(28% 0.01 90);margin:8px 0 0 0;padding-left:18px;">
+      <li>입력: OCR 텍스트·상품 품목·상품명</li>
+      <li>맞춤법 수정, 문맥 불일치 문장 수정·삭제, 상품 문맥 기반 오류 복원</li>
+      <li><strong>제공된 정보 범위를 벗어난 새 사실 생성은 방지</strong></li>
+    </ul>
+  </div>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:24px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">판매논리 생성 LLM — FAB · SONCAS</h3>
+    <table style="margin:10px 0;">
+      <thead><tr><th>요소</th><th>의미</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr><td>Feature</td><td>객관적 특징</td><td>약 1.97kg의 가벼운 무게</td></tr>
+        <tr><td>Advantage</td><td>기능적 장점</td><td>손목 부담을 줄이고 편하게 청소 가능</td></tr>
+        <tr><td>Benefit</td><td>소비자 관점 최종 혜택</td><td>청소 피로 감소와 일상 편의 향상</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:14px;line-height:1.8;color:oklch(28% 0.01 90);margin:0;">각 판매논리에 <strong>SONCAS</strong>(Security 안전성·Vanity 허영심·Novelty 새로움·Comfort 편안함·Money 경제성·Likeability 호감도) 구매동기를 복수 태깅합니다.</p>
+  </div>
+
+  <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:28px 0 10px 0;">실험 설계 및 결과</h3>
+  <p style="font-size:14px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 12px 0;">롯데하이마트 온라인몰의 가전 5개 품목(TV·냉장고·청소기·에어컨·전기밥솥) 상세페이지 이미지로 OCR 정답 데이터를 수작업 전사해 구축.</p>
+
+  <table style="margin-bottom:16px;">
+    <thead><tr><th>방식</th><th>평균 CER</th><th>원본 대비 감소</th></tr></thead>
+    <tbody>
+      <tr><td>원본 OCR</td><td>0.3347</td><td>–</td></tr>
+      <tr><td>CLAHE</td><td>0.3103</td><td>7.3%</td></tr>
+      <tr><td>LCORE</td><td>0.2761</td><td>17.5%</td></tr>
+    </tbody>
+  </table>
+
+  <table style="margin-bottom:16px;">
+    <thead><tr><th>지표</th><th>결과</th></tr></thead>
+    <tbody>
+      <tr><td>총 판매논리 수</td><td>65개</td></tr>
+      <tr><td>총 구매동기 태그 수</td><td>127개</td></tr>
+      <tr><td>문장당 평균 구매동기 수</td><td>1.95개</td></tr>
+      <tr><td>구매동기 항목 평균 포괄률</td><td>86.64%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px;line-height:1.7;color:oklch(45% 0.01 90);margin:0 0 36px 0;">가전유통 실무 경력 15년·3년 전문가 2인의 검토를 통해 실무 사용 가능성 확인.</p>
+
+  <h2 style="font-size:20px;font-weight:900;color:oklch(18% 0.01 90);margin:44px 0 6px 0;padding-top:12px;border-top:2px solid oklch(20% 0.01 90);">설득형 지식베이스 — FABEC</h2>
+  <p style="font-size:14.5px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 16px 0;">Study 2는 Study 1의 FAB를 확장한 <strong>FABEC</strong>(Feature·Advantage·Benefit·Experience·Context) 구조를 사용합니다. Experience(고객 경험)·Context(사용 맥락)가 Study 2에서 새로 확장되었습니다.</p>
+  <table style="margin-bottom:36px;">
+    <thead><tr><th>필드</th><th>의미</th><th>연구 단계</th></tr></thead>
+    <tbody>
+      <tr><td>product_attributes</td><td>기존 상품 속성</td><td>기존 데이터</td></tr>
+      <tr><td>feature / advantage / benefit</td><td>특징 / 장점 / 혜택</td><td>Study 1</td></tr>
+      <tr><td>experience</td><td>고객 경험</td><td>Study 2 확장</td></tr>
+      <tr><td>context</td><td>사용 맥락</td><td>Study 2 확장</td></tr>
+      <tr><td>soncas_tags</td><td>구매동기 태그</td><td>Study 1</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-size:20px;font-weight:900;color:oklch(18% 0.01 90);margin:44px 0 6px 0;padding-top:12px;border-top:2px solid oklch(20% 0.01 90);">Study 2 · 설득형 지식 기반 상품 추천 AI 에이전트</h2>
+  <img src="assets/arch-phd-study2.svg" alt="Study 2 상품 추천 AI 에이전트 구조" style="width:100%;display:block;margin:16px 0 24px 0;border:1px solid oklch(88% 0.005 90);border-radius:8px;background:#fff;padding:12px;">
+  <p style="font-size:14.5px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 20px 0;">사용자 인터페이스 → 질의 해석기(의도·상황·맥락) → 시맨틱 검색(설득형 지식 검색) → 재정렬 모듈(후보 우선순위) → 응답 생성기(설명형 추천 응답) 순서로 이어지며, 대화 메모리가 이전 대화·사용자 맥락을 유지합니다.</p>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:24px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">실험 설계 — Baseline vs Proposed</h3>
+    <p style="font-size:14px;line-height:1.8;color:oklch(28% 0.01 90);margin:0;">동일한 검색 파이프라인에서 문서 표현 방식만 바꿔 비교 — <strong>Baseline</strong>(상품 속성만) vs <strong>Proposed</strong>(상품 속성 + FABEC·구매동기). 목적은 정답 상품을 찾는지가 아니라 <strong>사용자 의도에 더 적합한 상품을 상위에 배치하는지</strong> 검증.</p>
+  </div>
+
+  <div style="border-left:3px solid oklch(45% 0.09 40);padding-left:20px;margin-bottom:24px;background:oklch(97% 0.012 40);border-radius:0 8px 8px 0;padding-top:14px;padding-bottom:14px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">실험 1 — 자체 구축 데이터</h3>
+    <ul style="font-size:14px;line-height:1.75;color:oklch(28% 0.01 90);margin:0;padding-left:18px;">
+      <li>롯데하이마트 노트북 상품 49개의 속성·상세페이지·FABEC 문서로 검색 데이터셋 구성</li>
+      <li>6개 SONCAS×3개 질의유형×3개 질문구조로 후보 질문 148개 생성, gemma4:e2b·llama3.1:8b 두 모델이 Fluency·Clarity·Relevance·Consistency·Answerability 기준으로 독립 검토해 <strong>최종 질문 54개</strong> 확정</li>
+      <li>Schema 정규화(주요 동기·필수 제약·선호)를 거쳐 관련성 0~2점 qrels 생성, hard disagreement(2점 vs 0점) 197개 제외</li>
+      <li>TREC Pooling 기반 후보 881개 중 <strong>최종 qrels 684개</strong> 구축</li>
+    </ul>
+  </div>
+
+  <div style="border-left:3px solid oklch(38% 0.09 165);padding-left:20px;margin-bottom:24px;">
+    <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:0 0 8px 0;">실험 2 — Amazon ESCI 외부 검증</h3>
+    <ul style="font-size:14px;line-height:1.75;color:oklch(28% 0.01 90);margin:0;padding-left:18px;">
+      <li>공개 데이터셋(ESCI US test small)으로 일반화 가능성 검증 — 질의–상품 쌍 181,701개, 질의 8,956개, 상품 164,900개</li>
+      <li>사람이 부여한 기존 relevance label(Exact=2·Substitute=1·Complement/Irrelevant=0)을 그대로 사용, LLM은 정답 라벨·질의 생성에 미관여</li>
+    </ul>
+  </div>
+
+  <h3 style="font-size:15.5px;font-weight:800;color:oklch(18% 0.01 90);margin:28px 0 10px 0;">검색 성능 결과</h3>
+  <table style="margin-bottom:16px;">
+    <thead><tr><th>데이터</th><th>지표</th><th>속성 기반</th><th>설득형 지식</th><th>변화</th></tr></thead>
+    <tbody>
+      <tr><td>하이마트</td><td>Hit@5</td><td>0.9630</td><td>1.0000</td><td>+0.0370</td></tr>
+      <tr><td>하이마트</td><td>MRR@10</td><td>0.8776</td><td>0.8849</td><td>+0.0073</td></tr>
+      <tr><td>하이마트</td><td>NDCG@10</td><td>0.6855</td><td>0.7106</td><td>+0.0251</td></tr>
+      <tr><td>ESCI</td><td>Hit@5</td><td>0.7642</td><td>0.7967</td><td>+0.0325</td></tr>
+      <tr><td>ESCI</td><td>MRR@10</td><td>0.6328</td><td>0.6734</td><td>+0.0406</td></tr>
+      <tr><td>ESCI</td><td>NDCG@10</td><td>0.4007</td><td>0.4267</td><td>+0.0260</td></tr>
+    </tbody>
+  </table>
+
+  <table style="margin-bottom:16px;">
+    <thead><tr><th>질의 유형</th><th>속성 기반 NDCG@10</th><th>설득형 지식 NDCG@10</th><th>개선폭</th></tr></thead>
+    <tbody>
+      <tr><td>attribute</td><td>0.7224</td><td>0.7419</td><td>+0.0195</td></tr>
+      <tr><td>benefit_use_case</td><td>0.6301</td><td>0.6713</td><td><strong>+0.0412</strong></td></tr>
+      <tr><td>mixed</td><td>0.7041</td><td>0.7185</td><td>+0.0144</td></tr>
+    </tbody>
+  </table>
+
+  <div style="background:oklch(94% 0.03 165);border-radius:8px;padding:18px 20px;margin:0 0 36px 0;">
+    <div style="font-size:13.5px;font-weight:700;color:oklch(28% 0.09 165);margin-bottom:4px;">핵심 결과</div>
+    <div style="font-size:14px;line-height:1.7;color:oklch(28% 0.05 165);">모든 주요 지표가 개선되었고, 특히 <strong>사용 상황·기대 혜택이 포함된 질의(benefit_use_case)</strong>에서 개선 폭이 가장 컸습니다 (예: "작업 효율을 높이기 위한 대화면 노트북 추천"). 설득형 지식은 관련성 높은 상품을 상위에 배치하는 NDCG·MRR 측면에서 특히 유효했습니다.</div>
+  </div>
+
+  <h2 style="font-size:20px;font-weight:900;color:oklch(18% 0.01 90);margin:44px 0 16px 0;padding-top:12px;border-top:2px solid oklch(20% 0.01 90);">연구의 통합적 해석과 기여</h2>
+  <p style="font-size:14.5px;line-height:1.8;color:oklch(28% 0.01 90);margin:0 0 16px 0;">Study 1이 상품 정보를 <strong>소비자 관점의 설명 지식으로 변환하는 지식 생성 계층</strong>이라면, Study 2는 이 지식을 <strong>검색·추천·응답에 활용하는 서비스 계층</strong>입니다.</p>
+  <ol style="margin:0 0 32px 0;padding-left:20px;font-size:14px;line-height:1.9;color:oklch(28% 0.01 90);">
+    <li>OCR 정확도 개선에 그치지 않고 판매논리 생성까지 연결</li>
+    <li>단순 스펙이 아니라 특징–장점–혜택–경험–맥락을 포함하는 설득형 지식 표현</li>
+    <li>판매자의 상품정보를 자연어 질의 대응용 검색 문서로 확장</li>
+    <li>자체 데이터와 사람 라벨 기반 공개 데이터(ESCI) 모두에서 검색 성능 검증</li>
+    <li>질의 해석·대화 메모리·재정렬·설명 응답을 포함한 AI 에이전트 구조 제안</li>
+  </ol>
+
+  <h2 style="font-size:20px;font-weight:900;color:oklch(18% 0.01 90);margin:44px 0 16px 0;padding-top:12px;border-top:2px solid oklch(20% 0.01 90);">연구의 한계와 향후 확장</h2>
+  <ul style="margin:0 0 36px 0;padding-left:20px;font-size:14px;line-height:1.9;color:oklch(28% 0.01 90);">
+    <li>상세페이지 이미지·OCR 텍스트 중심이라, 텍스트 위치·시각적 레이아웃 정보는 아직 활용하지 못함</li>
+    <li>고객 리뷰데이터를 반영하면 판매자 정보와 고객 인식의 일치성, 고객 경험·맥락을 더 구체화 가능</li>
+    <li>구매동기 자극 여부·다층적 생성은 정량화하고 전문가 검토로 실무성을 확인했으나, 판매논리의 질·깊이에 대한 직접적 정량평가는 향후 과제</li>
+  </ul>
+
+  <div style="background:oklch(94% 0.03 165);border-radius:8px;padding:18px 20px;margin:0 0 20px 0;">
+    <div style="font-size:13.5px;font-weight:700;color:oklch(28% 0.09 165);margin-bottom:4px;">관련 논문</div>
+    <div style="font-size:14px;line-height:1.7;color:oklch(28% 0.05 165);">김홍대, 「<a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003270801" target="_blank">OCR–LLM 기반 판매논리 자동 생성 프레임워크</a>」, 경영정보학연구, 2025.11</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;">
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">OCR (EasyOCR/CRAFT/CRNN)</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">LCORE</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">FABEC / SONCAS</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Taxonomy Design</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Semantic Search / Reranking</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">ESCI Dataset</span>
+    <span style="font-size:11px;padding:3px 10px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);font-weight:500;">Hit@5 / MRR@10 / NDCG@10</span>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding-top:32px;margin-top:20px;border-top:1px solid oklch(88% 0.005 90);font-size:13.5px;">
+    <a href="project-04-fashion-forecasting.dc.html">&larr; 이전: 상품 라이프사이클 최적화 프로그램</a>
+    <a href="project-06-milkcoach.dc.html">다음: 밀크코치 &rarr;</a>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

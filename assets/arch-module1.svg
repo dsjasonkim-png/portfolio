@@ -1,0 +1,25 @@
+<svg width="100%" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>모듈 1 — 상품 기획 및 도입 최적화 아키텍처</title>
+<desc>SKU 단위 총수요 예측과 점포·SKU 단위 초기수요 예측이 총생산량 제약 하 초기 배분 최적화로 이어지고, 점포별 배분량과 미충족 수요가 산출되는 구조</desc>
+<defs><marker id="m1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs>
+<rect width="680" height="340" fill="#ffffff"></rect>
+
+<g><rect x="30" y="30" width="160" height="72" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="110" y="55" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#26215C">SKU 총수요 예측</text><text x="110" y="73" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#3C3489">유사상품·속성 기반</text><text x="110" y="90" text-anchor="middle" font-family="monospace" font-size="9" fill="#6A61C9">Similarity Modeling</text></g>
+
+<g><rect x="30" y="140" width="160" height="72" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="110" y="165" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#26215C">점포×SKU 초기수요</text><text x="110" y="183" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#3C3489">점포별 필요 초기재고</text><text x="110" y="200" text-anchor="middle" font-family="monospace" font-size="9" fill="#6A61C9">Regression</text></g>
+
+<g><rect x="250" y="85" width="180" height="90" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="340" y="112" text-anchor="middle" font-family="sans-serif" font-size="13.5" font-weight="600" fill="#712B13">초기 배분 최적화</text><text x="340" y="132" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D">제약: Σ점포배분량</text><text x="340" y="148" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D">≤ SKU별 총생산량</text><text x="340" y="165" text-anchor="middle" font-family="monospace" font-size="9" fill="#B65C36">Linear Programming</text></g>
+
+<line x1="190" y1="66" x2="230" y2="66" stroke="#5F5E5A" stroke-width="1"></line>
+<path d="M230,66 L230,130 L250,130" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m1a)"></path>
+<line x1="190" y1="176" x2="230" y2="176" stroke="#5F5E5A" stroke-width="1"></line>
+<path d="M230,176 L230,130 L250,130" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m1a)"></path>
+
+<g><rect x="500" y="30" width="150" height="66" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="575" y="55" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#444441">점포×SKU</text><text x="575" y="72" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">권장 초기 배분량</text><text x="575" y="88" text-anchor="middle" font-family="monospace" font-size="9" fill="#8A8983">SAP ERP 연동</text></g>
+<g><rect x="500" y="170" width="150" height="66" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="575" y="195" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#444441">점포별</text><text x="575" y="212" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5F5E5A">미충족 예상수요</text></g>
+
+<path d="M430,113 L470,113 L470,63 L500,63" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m1a)"></path>
+<path d="M430,147 L470,147 L470,203 L500,203" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m1a)"></path>
+
+<text x="340" y="300" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#8A8983">모델링 단위: SKU (1단계) → 점포×SKU (2단계)</text>
+</svg>

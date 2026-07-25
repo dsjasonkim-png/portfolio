@@ -1,0 +1,26 @@
+<svg width="100%" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img">
+
+<title>쇼핑 AI Agent RAG 추천 구조</title>
+<desc>고객 질의를 해석해 상품 지식을 검색하고 재정렬한 뒤 답변을 생성하며, CDP 고객 프로파일이 개인화 컨텍스트로 함께 연계되는 구조</desc>
+<defs><marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker>
+<marker id="arrowFb2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#B65C36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs>
+<rect width="680" height="300" fill="#ffffff"></rect>
+
+<g><rect x="50" y="60" width="130" height="74" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="115" y="82" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#444441">고객 질의</text><text x="115" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5F5E5A">조건·예산·맥락</text><text x="115" y="119" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8A8983">Gradio UI</text></g>
+<g><rect x="200" y="60" width="130" height="74" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="265" y="82" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#26215C">질의 해석</text><text x="265" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489">Slot Filling</text><text x="265" y="119" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#6A61C9">LangChain/Graph</text></g>
+<g><rect x="350" y="60" width="130" height="74" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="415" y="82" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#26215C">지식 검색</text><text x="415" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489">품목→상품 2단계</text><text x="415" y="119" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#6A61C9">FAISS · BGE-m3-ko</text></g>
+<g><rect x="500" y="60" width="130" height="74" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="565" y="82" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#26215C">재정렬</text><text x="565" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489">Reranking</text><text x="565" y="119" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#6A61C9">Cross-Encoder</text></g>
+<path d="M265,60 C245,30 175,30 130,58" fill="none" stroke="#B65C36" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arrowFb2)"></path>
+<text x="195" y="22" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#993C1D">Slot Filling — 조건 부족 시 재질문 루프</text>
+<line x1="180" y1="97" x2="200" y2="97" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow2)"></line>
+<line x1="330" y1="97" x2="350" y2="97" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow2)"></line>
+<line x1="480" y1="97" x2="500" y2="97" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow2)"></line>
+
+<g><rect x="340" y="188" width="140" height="74" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="410" y="210" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#444441">CDP 프로파일</text><text x="410" y="228" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5F5E5A">개인화 컨텍스트</text><text x="410" y="247" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8A8983">CDP</text></g>
+<line x1="410" y1="188" x2="415" y2="134" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow2)"></line>
+
+<g><rect x="490" y="188" width="150" height="74" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="565" y="210" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#26215C">답변 생성</text><text x="565" y="228" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489">추천 근거 포함</text><text x="565" y="247" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#6A61C9">Gemma3-4B · vLLM</text></g>
+<line x1="565" y1="134" x2="565" y2="188" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow2)"></line>
+
+<text x="50" y="290" font-family="monospace" font-size="9.5" fill="#8A8983">개발환경: RTX4090 · 64GB RAM · FastAPI · GraphRAG(Neo4j)</text>
+</svg>

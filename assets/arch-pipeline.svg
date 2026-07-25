@@ -1,0 +1,38 @@
+<svg width="100%" viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>상품정보 자동화·검증 파이프라인 아키텍처</title>
+<desc>속성 추출과 고시정보 추출 두 파이프라인이 OCR과 LLM 정제, 다단계 검증 Agent를 거쳐 DB에 적재되고, 검증 결과의 오류 유형이 Prompt/Rule 개선 Feedback Loop로 되돌아가는 구조</desc>
+<defs><marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker>
+<marker id="arrowFb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#B65C36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs>
+<rect width="680" height="480" fill="#ffffff"></rect>
+
+
+<path d="M565,90 C620,55 470,40 415,68" fill="none" stroke="#B65C36" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arrowFb)"></path>
+<text x="490" y="42" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#993C1D">Feedback Loop — 품목군별 오류 유형 분석 → Prompt·Rule 개선</text>
+
+<text x="50" y="78" font-family="sans-serif" font-size="12" fill="#5F5E5A">속성 추출</text>
+<g><rect x="50" y="90" width="130" height="74" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"></rect><text x="115" y="112" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">상품 이미지</text><text x="115" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">온라인몰 상세컷</text><text x="115" y="149" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3E9C82">세로 최대 2만px</text></g>
+<g><rect x="200" y="90" width="130" height="74" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"></rect><text x="265" y="112" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">OCR</text><text x="265" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">텍스트 인식</text><text x="265" y="149" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3E9C82">easyOCR</text></g>
+<g><rect x="350" y="90" width="130" height="74" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"></rect><text x="415" y="112" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">LLM 정제</text><text x="415" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">오타·누락 보정</text><text x="415" y="149" text-anchor="middle" font-family="monospace" font-size="9" fill="#3E9C82">Public LLM · FABEC</text></g>
+<g><rect x="500" y="90" width="130" height="74" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"></rect><text x="565" y="112" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">검증 Agent</text><text x="565" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">원문대조·정합성 검증</text><text x="565" y="149" text-anchor="middle" font-family="monospace" font-size="9" fill="#3E9C82">Web Search API</text></g>
+<line x1="180" y1="127" x2="200" y2="127" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+<line x1="330" y1="127" x2="350" y2="127" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+<line x1="480" y1="127" x2="500" y2="127" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+
+<text x="50" y="204" font-family="sans-serif" font-size="12" fill="#5F5E5A">고시정보 추출</text>
+<g><rect x="50" y="216" width="130" height="74" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="115" y="238" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#712B13">상품 이미지</text><text x="115" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#993C1D">고시정보 영역</text><text x="115" y="275" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#B65C36">규격·주의사항</text></g>
+<g><rect x="200" y="216" width="130" height="74" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="265" y="238" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#712B13">OCR</text><text x="265" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#993C1D">텍스트 인식</text><text x="265" y="275" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#B65C36">easyOCR</text></g>
+<g><rect x="350" y="216" width="130" height="74" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="415" y="238" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#712B13">LLM 정제</text><text x="415" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#993C1D">항목별 정리</text><text x="415" y="275" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#B65C36">LLM</text></g>
+<g><rect x="500" y="216" width="130" height="74" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="565" y="238" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#712B13">Embedding</text><text x="565" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#993C1D">벡터 변환</text><text x="565" y="275" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#B65C36">Vector DB</text></g>
+<line x1="180" y1="253" x2="200" y2="253" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+<line x1="330" y1="253" x2="350" y2="253" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+<line x1="480" y1="253" x2="500" y2="253" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+
+<path d="M565,164 L635,164 L635,320 L390,320 L390,332" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></path>
+<path d="M565,290 L565,305 L310,305 L310,332" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></path>
+
+<g><rect x="255" y="332" width="170" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="340" y="354" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#444441">DB 적재</text><text x="340" y="372" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5F5E5A">정형 데이터 저장</text><text x="340" y="386" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8A8983">PostgreSQL</text></g>
+
+<line x1="340" y1="392" x2="340" y2="418" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow1)"></line>
+
+<g><rect x="190" y="418" width="300" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="340" y="440" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#444441">통합 조회·검증 화면</text><text x="340" y="458" text-anchor="middle" font-family="sans-serif" font-size="11.5" fill="#5F5E5A">추출요청·재처리·품질 모니터링</text><text x="340" y="472" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#8A8983">운영 Dashboard · REST API</text></g>
+</svg>

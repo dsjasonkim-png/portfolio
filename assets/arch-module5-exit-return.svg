@@ -1,0 +1,23 @@
+<svg width="100%" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>모듈 5 — 상품 Exit 및 재고 소진 최적화 아키텍처</title>
+<desc>주차별 판매실적에 Bass 모형을 적합해 판매확산 곡선을 추정하고, Elbow Point로 Exit 후보 시점을 탐지한 뒤 잔여재고를 예측해 물류센터 처리 케파를 반영한 반품 스케줄을 생성하는 구조</desc>
+<defs><marker id="m5a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs>
+<rect width="680" height="300" fill="#ffffff"></rect>
+
+<g><rect x="20" y="50" width="130" height="70" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="85" y="75" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="600" fill="#444441">주차별 판매실적</text><text x="85" y="92" text-anchor="middle" font-family="monospace" font-size="9" fill="#8A8983">누적 판매 데이터</text></g>
+
+<g><rect x="170" y="50" width="140" height="70" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"></rect><text x="240" y="72" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="600" fill="#26215C">Bass 모형 적합</text><text x="240" y="89" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#3C3489">판매확산 곡선 추정</text><text x="240" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#6A61C9">Bass Diffusion</text></g>
+
+<g><rect x="330" y="50" width="140" height="70" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"></rect><text x="400" y="72" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="600" fill="#712B13">Elbow Point 탐지</text><text x="400" y="89" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#993C1D">Exit 후보 주차 선정</text><text x="400" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#B65C36">Change Point Analysis</text></g>
+
+<g><rect x="490" y="50" width="150" height="70" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"></rect><text x="565" y="72" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="600" fill="#085041">잔여재고 예측</text><text x="565" y="89" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#0F6E56">Exit 시점 반품 대상 물량</text><text x="565" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#3E9C82">Inventory Simulation</text></g>
+
+<line x1="150" y1="85" x2="170" y2="85" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m5a)"></line>
+<line x1="310" y1="85" x2="330" y2="85" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m5a)"></line>
+<line x1="470" y1="85" x2="490" y2="85" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m5a)"></line>
+
+<g><rect x="330" y="180" width="220" height="80" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"></rect><text x="440" y="203" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#444441">물류센터 케파 기반 반품 스케줄링</text><text x="440" y="222" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#5F5E5A">주차별 반품량 ≤ 처리 가능 케파</text><text x="440" y="238" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#5F5E5A">케파 초과 주차 분산·조정</text><text x="440" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#8A8983">Capacity-Constrained Scheduling</text></g>
+<path d="M565,120 L565,155 L440,155 L440,180" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#m5a)"></path>
+
+<text x="340" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#8A8983">최종 산출물: SKU·물류센터·주차별 반품계획</text>
+</svg>
