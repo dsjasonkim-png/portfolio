@@ -58,6 +58,50 @@
     <li>클라이언트·현업과의 커뮤니케이션 기반 PM/PL 수행 및 팀 리드 경험</li>
   </ul>
 
+  <!-- ROADMAP -->
+  <h2 style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:oklch(38% 0.09 165);margin:0 0 6px 0;">롯데하이마트 AI 과제 로드맵</h2>
+  <p style="font-size:13.5px;line-height:1.7;color:oklch(45% 0.01 90);margin:0 0 18px 0;max-width:720px;">개별 과제를 하나씩 수행한 것이 아니라, &ldquo;AI가 상품과 고객을 이해하게 만든다&rdquo;는 목표 아래 과제 순서와 연결 구조를 직접 설계하고 실행했습니다. 네 과제가 모두 AI Agent 본과제의 선행 조건으로 모이는 구조입니다.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 10px 0;">
+      <div style="border:1px solid oklch(88% 0.005 90);border-radius:10px;background:#fff;padding:16px 18px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);">진단</div>
+        <div style="font-size:14.5px;font-weight:800;color:oklch(18% 0.01 90);margin:6px 0 6px 0;line-height:1.35;">고객 문의유형 분류 sLLM PoC</div>
+        <div style="font-size:12.5px;line-height:1.6;color:oklch(45% 0.01 90);">폐쇄망 sLLM 파인튜닝 · 자동 라벨링 — 모델보다 데이터·체계 설계가 병목임을 확인</div>
+        <div style="font-size:11px;color:oklch(38% 0.09 165);margin-top:8px;font-weight:600;">프로젝트 08</div>
+      </div>
+      <div style="border:1px solid oklch(88% 0.005 90);border-radius:10px;background:#fff;padding:16px 18px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);">PoC</div>
+        <div style="font-size:14.5px;font-weight:800;color:oklch(18% 0.01 90);margin:6px 0 6px 0;line-height:1.35;">쇼핑 AI Agent / RAG 추천</div>
+        <div style="font-size:12.5px;line-height:1.6;color:oklch(45% 0.01 90);">Gemma3 기반 대화형 추천 PoC — 답변 품질이 상품정보 품질에 종속됨을 확인</div>
+        <div style="font-size:11px;color:oklch(38% 0.09 165);margin-top:8px;font-weight:600;">프로젝트 03</div>
+      </div>
+      <div style="border:1px solid oklch(88% 0.005 90);border-radius:10px;background:#fff;padding:16px 18px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);">본과제</div>
+        <div style="font-size:14.5px;font-weight:800;color:oklch(18% 0.01 90);margin:6px 0 6px 0;line-height:1.35;">AI 상품정보 생성·검증 자동화</div>
+        <div style="font-size:12.5px;line-height:1.6;color:oklch(45% 0.01 90);">OCR·LLM 파이프라인으로 Agent가 소비할 상품 지식을 자동 생성·검증</div>
+        <div style="font-size:11px;color:oklch(38% 0.09 165);margin-top:8px;font-weight:600;">프로젝트 02</div>
+      </div>
+      <div style="border:1px solid oklch(88% 0.005 90);border-radius:10px;background:#fff;padding:16px 18px;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);">자산화</div>
+        <div style="font-size:14.5px;font-weight:800;color:oklch(18% 0.01 90);margin:6px 0 6px 0;line-height:1.35;">개인화 추천 & CDP 통합</div>
+        <div style="font-size:12.5px;line-height:1.6;color:oklch(45% 0.01 90);">고객 세그먼트·재구매주기를 CDP로 통합해 Agent·CRM의 개인화 컨텍스트로 연결</div>
+        <div style="font-size:11px;color:oklch(38% 0.09 165);margin-top:8px;font-weight:600;">프로젝트 01</div>
+      </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;">
+    <div style="text-align:center;font-size:15px;color:oklch(60% 0.02 165);">&darr;</div>
+    <div style="text-align:center;font-size:15px;color:oklch(60% 0.02 165);">&darr;</div>
+    <div style="text-align:center;font-size:15px;color:oklch(60% 0.02 165);">&darr;</div>
+    <div style="text-align:center;font-size:15px;color:oklch(60% 0.02 165);">&darr;</div>
+  </div>
+
+  <div style="background:oklch(24% 0.05 165);border-radius:10px;padding:20px 24px;margin:0 0 40px 0;">
+    <div style="font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:oklch(80% 0.08 165);">최종 목표</div>
+    <div style="font-size:17px;font-weight:800;color:#fff;margin:6px 0 6px 0;line-height:1.35;">AI Agent 본과제 — 고객이 대화로 상품을 찾고 추천받는 쇼핑 AI Agent</div>
+    <div style="font-size:13px;line-height:1.7;color:oklch(85% 0.02 165);">앞의 네 과제는 Agent가 동작하기 위한 선행 조건을 하나씩 확보하는 과정입니다. 무엇이 병목인지(문의유형 분류), 어떤 구조로 답변할지(RAG PoC), Agent가 읽을 상품 지식은 어떻게 만들지(상품정보 자동화), 누구에게 맞출지(CDP 통합).</div>
+  </div>
+
   <!-- PROJECTS -->
   <h2 id="projects" style="font-size:24px;font-weight:900;color:oklch(18% 0.01 90);margin:0 0 6px 0;padding-top:12px;">프로젝트</h2>
   <p style="font-size:13.5px;color:oklch(45% 0.01 90);margin:0 0 22px 0;">각 카드를 클릭하면 아키텍처와 상세 내용을 볼 수 있습니다</p>
@@ -91,6 +135,16 @@
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;">
         <span style="font-size:10.5px;padding:2px 8px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);">RAG</span>
         <span style="font-size:10.5px;padding:2px 8px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);">LangGraph</span>
+      </div>
+    </a>
+
+    <a href="project-08-inquiry-classification.dc.html" class="proj-card" style="display:block;border:1px solid oklch(88% 0.005 90);border-radius:10px;padding:22px;background:#fff;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);text-transform:uppercase;">08 · 롯데하이마트</div>
+      <div style="font-size:16.5px;font-weight:800;color:oklch(18% 0.01 90);margin:8px 0 8px 0;line-height:1.3;">sLLM 파인튜닝 기반 고객 문의유형 분류 (PoC)</div>
+      <div style="font-size:13px;color:oklch(45% 0.01 90);line-height:1.6;">Bllossom LoRA · Triplet Loss · 폐쇄망 DeepSeek 자동 라벨링</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;">
+        <span style="font-size:10.5px;padding:2px 8px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);">sLLM Fine-tuning</span>
+        <span style="font-size:10.5px;padding:2px 8px;border-radius:4px;background:oklch(94% 0.03 165);color:oklch(32% 0.09 165);">On-premise LLM</span>
       </div>
     </a>
 
@@ -168,6 +222,7 @@
   </ul>
   <h3 style="font-size:14px;font-weight:700;color:oklch(38% 0.09 165);margin:0 0 8px 0;">강의</h3>
   <ul style="margin:0;padding-left:20px;font-size:14px;line-height:1.9;color:oklch(28% 0.01 90);">
+    <li>스파르타코딩클럽 — AI Agent 국비교육 강사</li>
     <li>메타코드 — 유통·이커머스 데이터분석 입문 / 딥러닝 기반 고객행동예측 / 추천시스템 입문 / Tableau 입문</li>
     <li>전남대학교 — 빅데이터 입문(Python 및 데이터분석 기초)</li>
     <li>KT·미래에셋 — 추천시스템 및 딥러닝 실무 교육</li>
