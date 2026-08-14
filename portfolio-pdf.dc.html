@@ -63,7 +63,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);text-transform:uppercase;">01 · 롯데하이마트 · 2024.03 ~ 현재</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">온·오프라인 통합 개인화 추천 &amp; 고객 데이터 자산화</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">오프라인 매장 상담 데이터와 온라인 행동 데이터가 분리되어 고객 한 명의 관심사·재구매 주기를 통합 파악하기 어려웠던 문제를, 온·오프라인 전 채널 통합 고객 프로파일로 만드는 과제였습니다. 고객 생애주기·구매성향으로 729개 세그먼트를 구성해 매장 상담 태블릿에 추천 상품군을 제공하고, GA·구매이력 기반 구매가망모형으로 Lift 타겟팅을 수행했으며, 세그먼트·추천·재구매주기를 CDP로 통합해 AI Agent 개인화 컨텍스트로 연계했습니다.</p>
-    <img class="arch-img" src="assets/arch-recommendation.svg" alt="개인화 추천 및 CDP 통합 아키텍처" style="width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-recommendation.svg" alt="개인화 추천 및 CDP 통합 아키텍처" style="box-sizing:border-box;width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <p style="font-size:11.5px;color:oklch(38% 0.09 165);margin:6px 0 4px 0;">추천 상위 5개 상품의 1주 이내 구매율 47% 확인, 오프라인 상담 데이터를 디지털·AI 채널에서 재활용 가능한 기반 확보. <em style="color:oklch(45% 0.01 90);">Python·SQL·Recommendation·Customer Segmentation·Lift Analysis·CDP</em></p>
   </div>
 
@@ -71,7 +71,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);text-transform:uppercase;">02 · 롯데하이마트 · 2024.03 ~ 현재</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">AI 기반 상품정보 생성·검증 자동화 파이프라인 (AX)</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">가전제품은 구매 결정까지 평균 28일이 걸릴 만큼 스펙 비교가 어렵지만, 정답인 상세페이지는 세로 2만 픽셀 분량이라 담당자도 고객도 끝까지 읽기 어렵습니다. 온라인몰 상품 상세 이미지를 담당자가 수작업으로 입력하던 프로세스를 OCR·LLM 기반 자동 구조화 파이프라인으로 전환했습니다. easyOCR로 텍스트를 추출해 LLM으로 문맥 정제하고, FAB/FABEC 판매논리를 자동생성했으며, 하향식(업계표준 레퍼런스)·상향식(Taxonomy Induction) Taxonomy를 병행 설계했습니다. 원문대조·정합성·Web Search grounding을 결합한 다단계 검증 Agent와 품목군별 Prompt·Rule 개선 Feedback Loop를 구축했습니다.</p>
-    <img class="arch-img" src="assets/arch-pipeline.svg" alt="상품정보 자동화 파이프라인" style="width:100%;max-width:560px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-pipeline.svg" alt="상품정보 자동화 파이프라인" style="box-sizing:border-box;width:100%;max-width:560px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <p style="font-size:11.5px;color:oklch(38% 0.09 165);margin:6px 0 4px 0;">생성→검증→재처리 전 과정을 운영 가능한 구조로 자동화·표준화. <em style="color:oklch(45% 0.01 90);">OCR(easyOCR)·LLM·FABEC Framework·AI Agent·Dashboard</em></p>
   </div>
 
@@ -79,7 +79,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);text-transform:uppercase;">03 · 롯데하이마트 · 2024.03 ~ 현재</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">쇼핑 AI Agent / RAG 기반 상품 탐색·추천 PoC</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">기존 검색·필터 UI는 고객이 스스로 스펙 용어를 알고 조건을 입력해야만 원하는 상품을 찾을 수 있어, 자연스러운 쇼핑 대화를 지원하지 못한다는 문제에서 출발했습니다. LangChain·LangGraph로 질의 해석 구조를 설계하고, "냉장고 추천해줘" 같은 첫 질의에는 Slot Filling으로 조건을 수집한 뒤 추천하는 그래프를 구성했습니다. 품목별 벡터 DB로 품목→상품 2단계 계층 검색을 적용하고, CDP 고객 프로파일을 개인화 컨텍스트로 연계했습니다.</p>
-    <img class="arch-img" src="assets/arch-rag.svg" alt="쇼핑 AI Agent RAG 구조" style="width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-rag.svg" alt="쇼핑 AI Agent RAG 구조" style="box-sizing:border-box;width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <p style="font-size:11.5px;color:oklch(38% 0.09 165);margin:6px 0 4px 0;">상품 데이터와 고객 프로파일을 결합한 대화형 탐색·추천 구조의 적용 가능성 검증. <em style="color:oklch(45% 0.01 90);">LangChain·LangGraph·RAG·FAISS·GraphRAG(Neo4j)·Gemma3·Reranking</em></p>
   </div>
 
@@ -87,7 +87,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(45% 0.09 40);text-transform:uppercase;">04 · ㈜엑셈 · 2020.09 ~ 2023.08 · PM/PL</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">AI 기반 상품 라이프사이클 의사결정 최적화 프로그램</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">상품 기획·도입부터 리오더, 재고보충, 점포 간 재배치, 판매종료·반품까지 이어지는 상품 라이프사이클 전 과정의 의사결정을 데이터·AI로 최적화한 프로그램입니다. 클라이언트 요청으로 4인 팀 PM/PL을 맡아 약 20개 분석 과제를 동시 운영했습니다.</p>
-    <img class="arch-img" src="assets/arch-lifecycle-overview.svg" alt="상품 라이프사이클 5단계 개요" style="width:100%;max-width:560px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-lifecycle-overview.svg" alt="상품 라이프사이클 5단계 개요" style="box-sizing:border-box;width:100%;max-width:560px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <table style="width:100%;border-collapse:collapse;font-size:11px;margin:10px 0;">
       <thead><tr style="border-bottom:1px solid oklch(20% 0.01 90);"><th style="text-align:left;padding:4px 6px 4px 0;">모듈</th><th style="text-align:left;padding:4px 6px;">내용</th></tr></thead>
       <tbody>
@@ -105,7 +105,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(38% 0.09 165);text-transform:uppercase;">05 · 국민대 비즈니스IT전문대학원 박사과정 · 2023.09 ~ 2026.08</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">멀티모달 상품 정보를 활용한 설득형 지식 기반 상품 추천 AI 에이전트 프레임워크 연구</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">고관여 상품은 온라인에서 단순 스펙만으로 구매결정을 지원하기 어렵지만, 실제 유통 상품정보는 제조사별 형식이 제각각이고 핵심 소구점이 이미지 속 비정형 텍스트로 존재해 구조화에 큰 비용이 듭니다. Study 1은 OCR(EasyOCR/CRAFT)·LCORE(LLM 문맥 정제)로 FAB 판매논리와 SONCAS 구매동기를 자동 생성하고(평균 CER 0.3347→0.2761), Study 2는 이를 FABEC 지식베이스로 확장해 질의해석·시맨틱검색·재정렬·응답생성 AI Agent로 검증했습니다. 자체 데이터(하이마트 노트북 49개)와 공개 Amazon ESCI 데이터 모두에서 설득형 지식 기반 검색이 속성 기반 대비 Hit@5·MRR@10·NDCG@10 전 지표 개선을 보였고, 특히 사용상황·기대혜택이 담긴 질의에서 개선폭이 가장 컸습니다.</p>
-    <img class="arch-img" src="assets/arch-phd-e2e.svg" alt="End-to-End 연구 프레임워크" style="width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-phd-e2e.svg" alt="End-to-End 연구 프레임워크" style="box-sizing:border-box;width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <p style="font-size:11.5px;color:oklch(38% 0.09 165);margin:6px 0 4px 0;"><em style="color:oklch(45% 0.01 90);">OCR·LCORE·FABEC/SONCAS·Semantic Search/Reranking·ESCI Dataset·Hit@5/MRR@10/NDCG@10</em></p>
   </div>
 
@@ -113,7 +113,7 @@
     <div style="font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:oklch(45% 0.09 40);text-transform:uppercase;">06 · 개인 프로젝트 · 1인 개발 (바이브코딩)</div>
     <h3 style="font-size:16px;font-weight:800;color:oklch(18% 0.01 90);margin:5px 0 10px 0;">밀크코치 (Milk Coach)</h3>
     <p style="font-size:12.5px;line-height:1.75;margin:0 0 10px 0;">직수(모유수유)량은 저울로 재기 전엔 어떤 부모도 정확히 알 수 없다는 문제에서 출발했습니다. 유축은 배출량을 실측할 수 있다는 점에 착안해, 좌·우 유방의 충만도를 두 가지 함수 관계 — 지수적으로 목표치에 다가가는 회복 곡선과 한계체감(diminishing returns)하는 추출 곡선 — 로 모델링하고, 개인별 용량·효율 계수를 실측 직수 기록으로 점진 보정하도록 설계했습니다. Flutter/Supabase/Gemini API로 기획부터 배포까지 단독 진행했으며, 아이디어를 되묻는 grill-me → 실행 단위로 쪼개는 to_issue → PRD로 정리하는 to_prd 워크플로우로 요구사항을 먼저 굳힌 뒤 AI 코딩 어시스턴트로 구현을 반복하는 바이브코딩 방식으로 개발했습니다.</p>
-    <img class="arch-img" src="assets/arch-milkcoach.svg" alt="밀크코치 아키텍처" style="width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
+    <img class="arch-img" src="assets/arch-milkcoach.svg" alt="밀크코치 아키텍처" style="box-sizing:border-box;width:100%;max-width:520px;display:block;margin:8px auto;border:1px solid oklch(88% 0.005 90);border-radius:6px;">
     <p style="font-size:11.5px;color:oklch(45% 0.09 40);margin:6px 0 4px 0;">Google Play 비공개 테스트 진행 중. <em style="color:oklch(45% 0.01 90);">Flutter·Supabase·Google Gemini API·Google Play Billing·Cloudflare Pages</em></p>
   </div>
 
